@@ -17,16 +17,16 @@ variants:
         source: ./entrypoint.sh
         destination: .
       - from: local
-        source: ./go1.13.linux-amd64.tar.gz
-        destination: .
+        source: ./goProjects
+        destination: ./goProjects
       - from: local
         source: ./go
-        destination: .
+        destination: ./go
       - from: local
         source: ./src
-        destination: .
+        destination: ./src
       - from: local
         source: ./appdir
-        destination: .
-    entrypoint: [ /bin/bash ]
+        destination: ./appdir
+    entrypoint: [ ./entrypoint ]
 
