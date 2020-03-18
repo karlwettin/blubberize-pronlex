@@ -11,7 +11,7 @@ lives:
 variants:
   production:
     apt:
-      packages: [ gcc, build-essential, sqlite3 ]
+      packages: [ gcc, build-essential, sqlite3, git ]
     copies: 
       - from: local
         source: ./entrypoint.sh
@@ -28,5 +28,5 @@ variants:
       - from: local
         source: ./appdir
         destination: ./appdir
-    entrypoint: [ ./entrypoint.sh ]
+    entrypoint: [ "./entrypoint.sh" ]
 

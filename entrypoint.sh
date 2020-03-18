@@ -1,3 +1,7 @@
+#!/bin/bash
+
+echo "Executing entrypoint..."
+
 DIR=`pwd`
 
 export GOROOT=${DIR}/go

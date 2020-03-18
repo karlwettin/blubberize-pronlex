@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -p8080:8080 --rm --interactive --tty wikispeech-pronlex:latest
+docker run -p8787:8787 --rm --interactive --tty wikispeech-pronlex:latest
