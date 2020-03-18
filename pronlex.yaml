@@ -11,7 +11,7 @@ lives:
 variants:
   production:
     apt:
-      packages: [ gcc, build-essential, golang-1.13, sqlite3, git, wget, ca-certificates ]
+      packages: [ gcc, build-essential, sqlite3 ]
     copies: 
       - from: local
         source: ./entrypoint.sh
@@ -28,5 +28,5 @@ variants:
       - from: local
         source: ./appdir
         destination: ./appdir
-    entrypoint: [ ./entrypoint ]
+    entrypoint: [ ./entrypoint.sh ]
 
