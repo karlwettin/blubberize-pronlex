@@ -1,0 +1,32 @@
+version: v4
+
+base: docker-registry.wikimedia.org/wikimedia-buster
+
+runs:
+  insecurely: true
+
+lives:
+  in: /srv/pronlex
+   
+variants:
+  production:
+    apt:
+      packages: [ gcc, build-essential, golang-1.13, sqlite3, git, wget, ca-certificates ]
+    copies: 
+      - from: local
+        source: ./entrypoint.sh
+        destination: .
+      - from: local
+        source: ./go1.13.linux-amd64.tar.gz
+        destination: .
+      - from: local
+        source: ./go
+        destination: .
+      - from: local
+        source: ./src
+        destination: .
+      - from: local
+        source: ./appdir
+        destination: .
+    entrypoint: [ /bin/bash ]
+
